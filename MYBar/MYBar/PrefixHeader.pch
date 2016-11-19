@@ -1,0 +1,31 @@
+//
+//  PrefixHeader.pch
+//  MYBar
+//
+//  Created by 唐道勇 on 16/11/19.
+//  Copyright © 2016年 唐道勇. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+/*
+ *  打印输出(定位),可以不用
+ */
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d  \t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+/*
+ *  cocoapas导入的三方框架
+ */
+#import <AFNetworking.h>
+#import <Reachability.h>
+#import <MJRefresh.h>
+#import <UIImageView+WebCache.h>
+#import <YYModel.h>
+/**
+ *  基本宏
+ */
+#define BEST_URLSTRING @"www.baidu.com"
+
+#endif /* PrefixHeader_pch */
